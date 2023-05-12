@@ -1,0 +1,62 @@
+
+:root{
+    --black: #000;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins";
+    margin: 0;
+    padding: 50px;
+    background-color: #fafafa;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    max-width: 320px;
+    background-color: white;
+}
+
+.container{}
+
+.input {
+    width: 90%;
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    /* border: 1px solid var(--black); */
+    font-family: "Poppins";
+    text-align: center;
+}
+
+.add {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgb(129, 36, 36);
+    color: white;
+    border-radius: 5px;
+    font-family: "Poppins";
+    cursor: pointer;
+    text-align: center;
+}
+
+#shoppingList{}
+
+li{
+    list-style: square;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: rgba(233, 127, 127, 0.164);
+    width: 300px;
+    color: rgb(129, 36, 36);
+}
