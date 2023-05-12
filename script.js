@@ -4,6 +4,7 @@ import {
   getDatabase,
   ref,
   push,
+  onValue,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -33,6 +34,20 @@ add.addEventListener("click", function () {
 
   // clear the input field when button is pressed
   clear();
+});
+
+// use the onValue method from firebase
+onValue(shoppingListInDB, function (snap) {
+  let newSnap = Object.values(snap.val());
+//   console.log("Added new item - - > ", newSnap);
+  //   console.log(newSnap);
+
+  for (let i = 0; i < newSnap.length; i++) {
+    let current = newSnap[i];
+    // console.log(newSnap[i]);
+
+    appendItems(current);
+  }
 });
 
 // clear function
