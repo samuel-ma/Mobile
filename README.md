@@ -9,3 +9,12 @@ Learning firebase realtime database
   <li/> Javascript
   <li/> Firebase Realtime Database
  </ul>
+
+### CUSTOM FIREBASE FUNCTIONS
+<ul>
+  <li/> getDatabase
+  <li/> ref
+  <li/> remove
+  <li/> onValue
+  <li/> database
+ </ul>
