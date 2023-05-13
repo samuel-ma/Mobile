@@ -39,14 +39,13 @@ add.addEventListener("click", function () {
 // use the onValue method from firebase
 onValue(shoppingListInDB, function (snap) {
   let newSnap = Object.values(snap.val());
-//   console.log("Added new item - - > ", newSnap);
+  //   console.log("Added new item - - > ", newSnap);
   //   console.log(newSnap);
 
   for (let i = 0; i < newSnap.length; i++) {
-    let current = newSnap[i];
-    // console.log(newSnap[i]);
-
-    appendItems(current);
+    let current = newSnap;
+    appendItems(current[i]);
+    // console.log(current[i]);
   }
 });
 
@@ -56,5 +55,25 @@ function clear() {
 }
 
 function appendItems(e) {
-  shoppingList.innerHTML += `<li>${e}</li>`;
+  //   shoppingList.innerHTML += `<li>${e}</li>`;
+  let newLi = document.createElement("li");
+  newLi.textContent = `${e}`;
+  shoppingList.append(newLi);
+
+  let itemId, itemValue;
+
+  for (let i = 0; i < e.length; i++) {
+    itemId = i;
+    itemValue = e[i];
+
+    // console.log("The item id is ", itemId);
+    // console.log("The item value is ", itemValue);
+    // console.log("- - - - - - - - - - - - - - - -");
+  }
+
+  // delete
+  newLi.addEventListener("click", function () {
+    let locationInDB = ref(database, `shoppingList${itemId}`);
+    this.remove(locationInDB);
+  });
 }
