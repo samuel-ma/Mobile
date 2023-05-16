@@ -77,7 +77,3 @@ function appendItems(e) {
     this.remove(locationInDB);
   });
 }
-
-
-
-
